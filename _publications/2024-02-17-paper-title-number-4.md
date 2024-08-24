@@ -1,13 +1,13 @@
 ---
-title: "Paper Title Number 4"
+title: "A compact and low-powered proton detector for a nano-satellite"
 collection: publications
 category: conferences
-permalink: /publication/2024-02-17-paper-title-number-4
-excerpt: 'This paper is about fixing template issue #693.'
-date: 2024-02-17
-venue: 'GitHub Journal of Bugs'
-paperurl: 'http://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2024). &quot;Paper Title Number 3.&quot; <i>GitHub Journal of Bugs</i>. 1(3).'
+permalink: /publication/2021-10-01-charge_particle-monitor
+excerpt: 'This paper describes the design of a charged particle monitor (CPM) onboard COEPSAT-2, a nanosatellite being developed by the students of College of Engineering, Pune with the scientific objective to demonstrate propulsion using solar sailing, raising its orbit from 700 km to 1200 km.'
+date: 2021-10-01
+venue: 'IAC 2021 congress proceedings, 72nd International Astronautical Congress (IAC), Dubai, United Arab Emirates'
+paperurl: 'https://dl.iafastro.directory/event/IAC-2021/paper/65834/'
+citation: 'Jaltare, Y. (2021). &quot;A compact and low-powered proton detector for a nano-satellite.&quot; <i>International Astronautical Congress</i>. 1(3).'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+This paper describes the design of a charged particle monitor (CPM) onboard COEPSAT-2, a nanosatellite being developed by the students of College of Engineering, Pune with the scientific objective to demonstrate propulsion using solar sailing, raising its orbit from 700 km to 1200 km. The existing models of the charged particle environment which are a compilation of databases of different satellite missions restricted to single orbits and collected at different time periods exhibit a high level of non-uniformity. The utility of the mission is to characterize and model the charged particle environment with time and position, thus providing a gainful approach due to high volume coverage of the mission. The proposed design of the charged particle monitor aims to provide a homogeneous database of the proton flux ranging from 10MeV to 100MeV using a compact detector configuration as an alternative to bulky passively shielded detectors. Owing to the orbit manoeuvring payload, the satellite will be able to characterize the charged particle flux with altitude and uniformly model the charged particle environment in the upper ionosphere. The detector unit comprises a 33mm thick CsI(Tl) scintillator screen optically coupled with a PIN photodiode, a silicon coincidence detector and an anti-coincidence detector. The detection of non-normal particles is restricted by placing the coincidence detector at a distance of 50mm from the CsI(Tl) screen, hence setting the detector’s field of view. The placement of the coincidence detector has been determined by taking into account the dimensional constraints and by calculating the accuracy at various distances. Anti-coincidence detector is used to classify particles having energy greater than 100 MeV. Timing of signals from coincidence and anticoincidence detectors is used in a sequential manner to prevent false detection of charged particles in the system. The semiconductor detectors consume less power as compared to photomultiplier tube-based systems. This configuration and choice of materials enhance the accuracy significantly at a smaller size and lower power consumption compared to conventional detector systems. The entire detector volume is less than 100 cc. The detector design has been simulated in Geant4 to validate its behaviour for the proposed energy range. This paper provides a new approach for designing compact and efficient CPMs for small satellites having power and size constraints and aims to serve as a reference for future designs.
