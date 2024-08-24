@@ -17,10 +17,10 @@ Education
 
 Work experience
 ======
-* **Teaching Assistant**, College of Computing and Informatics *(August 2024 - Present)*
+<!-- * **Teaching Assistant**, College of Computing and Informatics *(August 2024 - Present)*
   * Supported and enhanced student learning by assisting with Python-based data mining assignments and projects, utilizing libraries such as Pandas, NumPy, and **Scikit-learn** and XGBoost
   * Facilitated student comprehension of data visualization techniques through hands-on guidance with Matplotlib and Seaborn, resulting in clearer and more effective data presentations.
-  * Collaborated with the course instructor to develop and maintain course materials, including assignments, exams, and lab exercises, ensuring alignment with learning objectives and effective assessment.
+  * Collaborated with the course instructor to develop and maintain course materials, including assignments, exams, and lab exercises, ensuring alignment with learning objectives and effective assessment. -->
 
 * **Software Engineer**, Bajaj Finserv Ltd *(July 2022 - July 2024)*
   * Optimized EMI portfolio database with Azure data engineering tools, resulting in **10% reduction** in loan processing time and 5% cost reduction as compared to traditional IT systems.  
