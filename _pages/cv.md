@@ -49,18 +49,16 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+Projects
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
+
+* **Optimization of electric vehicle charging using machine learning**
+
+  * Implemented machine learning algorithm to increase power efficiency at electric vehicle charging stations by **18.3%**. 
+  * Worked on massive raw data points and performed data cleaning methods using Pandas to create training and testing datasets for model training. 
+  * Hosted the project setup on web using Django Web Framework and used MySQL database for end-to-end integration. 
+  * Skills - Pandas, Keras, MySQL Workbench, Django
+
+
+
   
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
