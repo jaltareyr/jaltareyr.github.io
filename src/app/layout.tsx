@@ -75,7 +75,6 @@ export default function RootLayout({
 }
 
 function NavLink({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) {
-  const basePath = "/portfolio-pages"; // Your GitHub repository name
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (href.startsWith("#")) {
