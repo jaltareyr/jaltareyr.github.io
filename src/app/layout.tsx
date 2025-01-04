@@ -27,9 +27,8 @@ function Header() {
           <NavLink href="/#about" onClick={() => setIsMenuOpen(false)}>ABOUT</NavLink>
           <NavLink href="/#experience" onClick={() => setIsMenuOpen(false)}>EXPERIENCE</NavLink>
           <NavLink href="/#education" onClick={() => setIsMenuOpen(false)}>EDUCATION</NavLink>
-          <NavLink href="/projects" onClick={() => setIsMenuOpen(false)}>PROJECTS</NavLink>
-          <NavLink href="/designs" onClick={() => setIsMenuOpen(false)}>DESIGNS</NavLink>
-          <NavLink href="/blogs" onClick={() => setIsMenuOpen(false)}>BLOGS</NavLink>
+          {/* <NavLink href="/projects" onClick={() => setIsMenuOpen(false)}>PROJECTS</NavLink>
+          <NavLink href="/blogs" onClick={() => setIsMenuOpen(false)}>BLOGS</NavLink> */}
           <NavLink href="/#contact" onClick={() => setIsMenuOpen(false)}>CONTACT</NavLink>
         </nav>
       </div>
@@ -92,8 +91,8 @@ function NavLink({ href, children, onClick }: { href: string; children: React.Re
 
   return (
     <a
-      // href={`${href}`}
-      href={`${basePath}${href}`}
+      href={`${href}`}
+      // href={`${basePath}${href}`}
       onClick={handleClick}
       className="text-sm font-medium px-2 py-2 relative group whitespace-nowrap"
     >
