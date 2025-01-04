@@ -190,7 +190,7 @@ interface SkillCategoryProps {
   skills: React.ReactNode[]
 }
 
-export function SkillCategory({ title, skills }: SkillCategoryProps) {
+function SkillCategory({ title, skills }: SkillCategoryProps) {
   return (
     <div>
       <h3 className="font-bold mb-2 text-gray-800">{title}</h3>
