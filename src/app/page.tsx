@@ -9,7 +9,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="relative h-screen w-full">
         <Image
-          src="./clt_cover.jpg"
+          src="/clt_cover.jpg"
           alt="CLT View"
           layout="fill"
           objectFit="cover"
@@ -39,9 +39,9 @@ export default function Home() {
               {/* First column: Profile image and Skills */}
               <div className="lg:w-1/3 bg-gray-50 p-6 sm:p-8">
                 <div className="flex flex-col items-center">
-                  <div className="flex-shrink-0 mb-6 sm:mb-8">
+                  <div className="flex-shrink-0 mb-6 sm:mb-8 transition-transform duration-300 ease-in-out hover:scale-105">
                     <Image
-                      src="./profile.jpg"
+                      src="/profile.jpg"
                       alt="Yashodhan Jaltare Profile Image"
                       width={400}
                       height={400}
@@ -119,19 +119,19 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12">EXPERIENCE</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <ExperienceCard
-              src="./uncc_logo.png?height=500&width=500"
+              src="/uncc_logo.png?height=500&width=500"
               companyName="University of North Carolina at Charlotte"
               position="Graduate Assistant"
               duration="Aug 2024 - Present"
             />
             <ExperienceCard
-              src="./bfl_logo.png?height=250&width=250"
+              src="/bfl_logo.png?height=250&width=250"
               companyName="Software Engineer"
               position="Software Engineer,"
               duration="Jul 2022 - Jul 2024"
             />
             <ExperienceCard
-              src="./tp_logo.png?height=250&width=250"
+              src="/tp_logo.png?height=250&width=250"
               companyName="Tetra Pak"
               position="Machine Learning Intern"
               duration="June 2021 - Jul 2022"
@@ -146,13 +146,13 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12">EDUCATION</h2>
           <div className="flex flex-col sm:flex-row justify-center items-stretch gap-6 sm:gap-1">
             <EducationCard 
-              src="./uncc_logo.png?height=250&width=250"
+              src="/uncc_logo.png?height=250&width=250"
               universityName="University of North Carolina at Charlotte"
               degree="Master of Science in Computer Science"
               year="2024 - 2026"
             />
             <EducationCard 
-              src="./coep_logo.jpeg?height=250&width=250"
+              src="/coep_logo.jpeg?height=250&width=250"
               universityName="COEP Technological University"
               degree="Bachelor of Technology in Electrical Engineering"
               year="2018 - 2022"
@@ -208,7 +208,7 @@ function SkillCategory({ title, skills }: SkillCategoryProps) {
 
 function EducationCard({ src, universityName, degree, year }: { src: string, universityName: string, degree: string, year: string }) {
   return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-300 overflow-hidden w-full max-w-sm mx-auto">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-300 overflow-hidden w-full max-w-sm mx-4 transition-transform duration-300 ease-in-out hover:scale-105">
       <div className="p-4 flex flex-col h-full">
         <div className="mb-4 flex-shrink-0">
           <Image
@@ -233,7 +233,7 @@ function EducationCard({ src, universityName, degree, year }: { src: string, uni
 
 function ExperienceCard({ src, companyName, position, duration }: { src: string, companyName: string, position: string, duration: string }) {
   return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-300 overflow-hidden w-full max-w-sm mx-auto">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-300 overflow-hidden w-full max-w-sm mx-auto transition-transform duration-300 ease-in-out hover:scale-105">
       <div className="p-4 flex flex-col h-full">
         <div className="mb-4 flex-shrink-0">
           <Image
