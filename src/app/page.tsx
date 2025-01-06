@@ -3,6 +3,10 @@ import Link from 'next/link'
 import { Linkedin, Mail, Check, Github } from 'lucide-react'
 import { AnimatedText } from '../components/ui/AnimatedText'
 
+export const metadata = {
+  title: 'Portfolio - Yashodhan Jaltare',
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-grey-100 to-white" id="home">
@@ -21,7 +25,8 @@ export default function Home() {
           <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold">
             <AnimatedText 
               texts={[
-                "System Architect and Data Scientist"
+                "MLOps Engineer",
+                "Data Scientist"
               ]}
               typingSpeed={100}
               deletingSpeed={50}
