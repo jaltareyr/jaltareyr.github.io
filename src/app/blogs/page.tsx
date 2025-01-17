@@ -4,28 +4,28 @@ import Link from 'next/link';
 export default function BlogsPage() {
   const placeholderPosts = [
     {
-      title: '12 things on my startup journey 2021',
-      description: 'Sharing 12 valuable lessons from my startup journey, including the importance of understanding users, building the right team, and embracing resilience. A candid reflection on the highs, lows, and learning curves of entrepreneurship.',
-      date: 'March 10, 2021',
-      readTime: '3 min read',
-      thumbnail: 'https://miro.medium.com/v2/resize:fit:720/format:webp/0*TPnYKfaAglSk8NQx.jpeg', // Add your placeholder image to the public folder
-      mediumUrl: 'https://deshpandeishau.medium.com/12-things-on-my-startup-journey-f82a5dde9db3',
+      title: 'HOW TO: Create a new job on Databricks using Jobs API',
+      description: 'A step-by-step guide to creating and managing a new job on Databricks using the Jobs API.',
+      date: 'May 12, 2024',
+      readTime: '4 min read',
+      thumbnail: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*7GY7Ljkfj5Fsz-7y8xJDCQ.png', // Add your placeholder image to the public folder
+      mediumUrl: 'https://medium.com/@jaltareyr/how-to-create-a-new-job-on-databricks-using-jobs-api-5baafa255bc3',
     },
     {
-      title: 'How colours affect you subconsciously',
-      description: 'Today as I was working on some of my courses, I felt the need for a pen and paper.',
-      date: 'September 22, 2021',
+      title: 'HOW TO: Use secrets in Databricks to secure your credentials',
+      description: 'We can use Databricks secrets to store and use credentials and reference them in notebooks and workflows.',
+      date: 'June 25, 2024',
       readTime: '2 min read',
-      thumbnail: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*bcY0bcZqaPaV8bgDx7UMDA.jpeg',
-      mediumUrl: 'https://deshpandeishau.medium.com/how-colours-affect-you-subconsciously-860ceb3797e3',
+      thumbnail: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Tf-Cctss--BizBx7N-Uifw.jpeg',
+      mediumUrl: 'https://medium.com/@jaltareyr/how-to-use-secrets-in-databricks-to-secure-your-passwords-96043d6d4a40',
     },
     {
-      title: 'The Art of Duplication',
+      title: 'Optimization Strategies to Reduce Databricks Costs | By Yashodhan Jaltare',
       description: 'The first-ever design software I started using was Blender. I wouldn’t just call it software; it’s a whole environment on its own.',
-      date: 'September 20, 2021',
-      readTime: '2 min read',
-      thumbnail: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*WGyl2LSSN-816uZ_j3_Hgw.png',
-      mediumUrl: 'https://deshpandeishau.medium.com/the-art-of-copying-85ee45589774',
+      date: 'July 22, 2024',
+      readTime: '4 min read',
+      thumbnail: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*do1ktvGR9Cj6vzFBu_8Irw.png',
+      mediumUrl: 'https://medium.com/@jaltareyr/optimization-strategies-to-reduce-databricks-costs-by-yashodhan-jaltare-a2fdac8c6233',
     }
   ];
 

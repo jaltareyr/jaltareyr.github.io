@@ -14,7 +14,7 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black text-white px-4 h-16 flex items-center justify-center">
       <div className="container mx-auto flex justify-center items-center max-w-screen-xl relative">
-        <button 
+        <button
           className="md:hidden absolute left-4"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
@@ -27,8 +27,8 @@ function Header() {
           <NavLink href="/#about" onClick={() => setIsMenuOpen(false)}>ABOUT</NavLink>
           <NavLink href="/#experience" onClick={() => setIsMenuOpen(false)}>EXPERIENCE</NavLink>
           <NavLink href="/#education" onClick={() => setIsMenuOpen(false)}>EDUCATION</NavLink>
-          {/* <NavLink href="/projects" onClick={() => setIsMenuOpen(false)}>PROJECTS</NavLink>
-          <NavLink href="/blogs" onClick={() => setIsMenuOpen(false)}>BLOGS</NavLink> */}
+          {/* <NavLink href="/projects" onClick={() => setIsMenuOpen(false)}>PROJECTS</NavLink> */}
+          <NavLink href="/blogs" onClick={() => setIsMenuOpen(false)}>BLOGS</NavLink>
           <NavLink href="/#contact" onClick={() => setIsMenuOpen(false)}>CONTACT</NavLink>
         </nav>
       </div>
@@ -37,7 +37,7 @@ function Header() {
 }
 
 function Footer() {
-  
+
   return (
     <footer className="flex flex-col sm:flex-row py-4 w-full shrink-0 items-center justify-between px-4 md:px-6 border-t text-center sm:text-left">
       <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 sm:mb-0">
