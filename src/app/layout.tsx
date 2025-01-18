@@ -27,7 +27,7 @@ function Header() {
           <NavLink href="/#about" onClick={() => setIsMenuOpen(false)}>ABOUT</NavLink>
           <NavLink href="/#experience" onClick={() => setIsMenuOpen(false)}>EXPERIENCE</NavLink>
           <NavLink href="/#education" onClick={() => setIsMenuOpen(false)}>EDUCATION</NavLink>
-          {/* <NavLink href="/projects" onClick={() => setIsMenuOpen(false)}>PROJECTS</NavLink> */}
+          <NavLink href="/resume" onClick={() => setIsMenuOpen(false)}>RESUME</NavLink>
           <NavLink href="/blogs" onClick={() => setIsMenuOpen(false)}>BLOGS</NavLink>
           <NavLink href="/#contact" onClick={() => setIsMenuOpen(false)}>CONTACT</NavLink>
         </nav>
