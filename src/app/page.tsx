@@ -1,260 +1,349 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Linkedin, Mail, Check, Github } from 'lucide-react'
-import { AnimatedText } from '../components/ui/AnimatedText'
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { AnimatedText } from "@/components/ui/AnimatedText";
+import { contact, education, skillGroups } from "@/lib/portfolio-data";
 
-export const metadata = {
-  title: 'Portfolio - Yashodhan Jaltare',
+export const metadata: Metadata = {
+  title: "Yashodhan Jaltare | Software, Data & AI Engineer",
+  description:
+    "Portfolio of Yashodhan Jaltare, a software, data, and AI engineer based in Charlotte, North Carolina.",
 };
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-grey-100 to-white" id="home">
-      {/* Hero Section */}
-      <div className="relative h-screen w-full">
+    <div
+      className="min-h-screen bg-gradient-to-b from-gray-100 to-white"
+      id="home"
+    >
+      <section className="relative h-[calc(100vh-4rem)] min-h-[560px] w-full overflow-hidden">
         <Image
-          src="/clt_cover.jpg"
-          alt="CLT View"
-          layout="fill"
-          objectFit="cover"
+          src="/banner.jpg"
+          alt="Charlotte skyline"
+          fill
+          className="object-cover"
           priority
+          sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent pointer-events-none"></div>
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center bg-black bg-opacity-50 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 sm:mb-6">Yashodhan Jaltare</h1>
-          <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold">
-            <AnimatedText 
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/20" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-white/80 sm:text-sm">
+            Hello, I&apos;m
+          </p>
+          <h1 className="max-w-full text-3xl font-extrabold tracking-[-0.04em] sm:text-6xl md:text-7xl">
+            Yashodhan Jaltare
+          </h1>
+          <div className="mt-5 min-h-10 text-lg font-semibold sm:text-xl md:text-2xl">
+            <AnimatedText
               texts={[
-                "MLOps Engineer",
-                "Data Scientist"
+                "Software Engineer",
+                "AI Forward Deployed Engineer",
+                "AI Engineer",
               ]}
-              typingSpeed={100}
-              deletingSpeed={50}
-              delayBetweenTexts={100}
+              typingSpeed={65}
+              deletingSpeed={12}
+              delayBetweenTexts={900}
+              className="text-center"
             />
           </div>
+          <Link
+            href="/#about"
+            className="mt-10 rounded-full border border-white/60 bg-white/10 px-6 py-2.5 text-sm font-semibold backdrop-blur-sm transition-colors hover:bg-white hover:text-black"
+          >
+            Explore my work
+          </Link>
         </div>
-      </div>
+      </section>
 
-      {/* About Section */}
-      <div className="py-12 sm:py-20" id="about">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <section className="py-14 sm:py-20" id="about">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg">
             <div className="flex flex-col lg:flex-row">
-              {/* First column: Profile image and Skills */}
-              <div className="lg:w-1/3 bg-gray-50 p-6 sm:p-8">
-                <div className="flex flex-col items-center">
-                  <div className="flex-shrink-0 mb-6 sm:mb-8 transition-transform duration-300 ease-in-out hover:scale-105">
-                    <Image
-                      src="/profile.jpg"
-                      alt="Yashodhan Jaltare Profile Image"
-                      width={400}
-                      height={400}
-                      className="rounded-full shadow-lg"
-                    />
-                  </div>
-                  <div className="w-full">
-                  <div className="space-y-4 sm:space-y-6">
-                      <SkillCategory
-                        title="Skills"
-                        skills={[
-                          <><strong>Programming Languages:</strong> JavaScript, TypeScript, Python, C#, SQL, Go</>,
-                          // <><strong>Frontend Tools:</strong> HTML, CSS, JavaScript, TypeScript, React.js, Angular, Next.js, Webpack</>,
-                          // <><strong>Backend Tools:</strong> Node.js, Express.js, Django, Flask, FastAPI, RESTful APIs, WebSocket, JSON, XML, Auth0</>,
-                          <><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, SQLite, SQL Server, Cassandra</>,
-                          <><strong>Cloud Tools:</strong> Microsoft Azure, Amazon Web Services, Databricks, Apache Spark, Apache Airflow, Pyspark, RESTful API, Docker, Azure Data Factory (ADF), SQL Server Integration Services (SSIS), Azure Data Lake Storage, Amazon S3, Azure Blob Storage</>,
-                          <><strong>DevOps Tools:</strong> Git, GitHub, Azure DevOps, Docker Compose, Azure Pipelines</>
-                        ]}
-                      />
+              <aside className="bg-gray-50 p-6 sm:p-8 lg:w-1/3">
+                <div className="mx-auto mb-8 max-w-[260px] overflow-hidden rounded-full shadow-md ring-4 ring-white">
+                  <Image
+                    src="/profile.jpeg"
+                    alt="Yashodhan Jaltare"
+                    width={400}
+                    height={400}
+                    className="aspect-square w-full object-cover"
+                  />
+                </div>
+                <h2 className="mb-5 text-lg font-extrabold tracking-tight text-gray-900">
+                  TECHNICAL SKILLS
+                </h2>
+                <div className="space-y-5">
+                  {skillGroups.map((group) => (
+                    <div key={group.title}>
+                      <h3 className="mb-2 text-sm font-bold text-gray-800">
+                        {group.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        {group.items.map((item) => (
+                          <span
+                            key={item}
+                            className="rounded-md border border-gray-200 bg-white px-2 py-1 text-xs font-medium text-gray-600"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
                     </div>
+                  ))}
                 </div>
-                </div>
-              </div>
+              </aside>
 
-              {/* Second column: About text */}
-              <div className="lg:w-2/3 p-6 sm:p-8">
-                <h1 className="text-2xl sm:text-3xl text-gray-900 font-extrabold leading-loose mb-4 sm:mb-6">ABOUT ME</h1>
-                <div className="space-y-4 sm:space-y-6">
-                <div className="text-base sm:text-lg md:text-base text-gray-500 leading-relaxed space-y-4">
+              <div className="p-6 sm:p-10 lg:w-2/3 lg:p-12">
+                <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-green-600">
+                  About me
+                </p>
+                <h2 className="mb-7 text-3xl font-extrabold tracking-[-0.035em] text-gray-900 sm:text-4xl">
+                  I turn complex workflows into reliable software.
+                </h2>
+                <div className="space-y-5 text-base leading-7 text-gray-600">
                   <p>
-                    My name is <strong>Yashodhan Jaltare</strong>. I am a master’s student at the University of North Carolina at Charlotte,
-                    majoring in Computer Science with a concentration in Data Science.
+                    I&apos;m a software, data, and AI engineer completing my
+                    Master&apos;s in Computer Science at the University of North
+                    Carolina at Charlotte, with a concentration in Data Science.
                   </p>
-                  
                   <p>
-                    I am a passionate data engineer and machine learning practitioner with a strong foundation in
-                    building high-performance ETL pipelines, optimizing large-scale databases, and implementing ML
-                    models for impactful real-world applications. I bring both academic expertise and
-                    hands-on experience from roles in industry-leading companies and ambitious projects.
+                    At{" "}
+                    <strong className="font-semibold text-gray-900">
+                      TheoremLabs.io
+                    </strong>
+                    , I build a HR technology platform supporting hiring,
+                    timekeeping, payroll, billing, and invoicing workflows tied
+                    to nearly $50M in business revenue. I take work from
+                    requirements and architecture through development and
+                    production.
                   </p>
-                  
                   <p>
-                    <strong>Data Engineering:</strong> With extensive experience in designing and optimizing ETL pipelines
-                    on platforms like Databricks, Azure Data Warehouse, and SQL Server, I’ve successfully managed and
-                    processed databases of over 80 million records, reducing loan processing times and enhancing risk
-                    management. My work with T-SQL, Hadoop, and other big data tools has allowed me to deliver robust
-                    data solutions that drive business growth and efficiency.
+                    My background also includes serverless product engineering
+                    at{" "}
+                    <strong className="font-semibold text-gray-900">
+                      Discovery Education
+                    </strong>{" "}
+                    and large-scale data engineering at{" "}
+                    <strong className="font-semibold text-gray-900">
+                      Bajaj Finserv
+                    </strong>
+                    , where I built platforms handling more than 80 million
+                    records and 200 TB of transactional data.
                   </p>
-                  
                   <p>
-                    <strong>Machine Learning:</strong> My ML expertise spans from traditional algorithms to neural
-                    networks and NLP, using frameworks like TensorFlow, PyTorch, and Scikit-Learn. Projects such as
-                    building a question generation app using Qwen2.5 LLM and a movie recommender showcase my skill
-                    in applying cutting-edge techniques for customized solutions. I focus on model optimization,
-                    efficient data pipelines, and generating actionable insights that support decision-making.
-                  </p>
-                  
-                  <p>
-                    <strong>DevOps:</strong> Skilled in DevOps tools like Azure DevOps, Docker, and Kubernetes, I’ve
-                    architected CI/CD pipelines that improve code management, security, and delivery timelines. By
-                    integrating these practices into data engineering workflows, I aim to streamline deployments and
-                    support dynamic, scalable infrastructure.
+                    I care about practical outcomes: safer releases, cleaner
+                    data, lower infrastructure costs, and products that make
+                    difficult operational work feel straightforward.
                   </p>
                 </div>
+                <div className="mt-9 flex flex-wrap gap-3">
+                  <Link
+                    href="/resume"
+                    className="inline-flex items-center gap-2 rounded-md bg-black px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
+                  >
+                    View resume <ArrowUpRight size={16} />
+                  </Link>
+                  <Link
+                    href="/projects"
+                    className="inline-flex items-center gap-2 rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-800 transition-colors hover:border-black"
+                  >
+                    See projects <ArrowUpRight size={16} />
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Experience Section */}
-      <div className="py-12 sm:py-20" id="experience">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12">EXPERIENCE</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+      <section className="bg-white py-14 sm:py-20" id="experience">
+        <div className="container mx-auto max-w-6xl px-4">
+          <SectionHeading eyebrow="Career" title="EXPERIENCE" />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <ExperienceCard
-              src="/uncc_logo.png?height=500&width=500"
-              companyName="University of North Carolina at Charlotte"
-              position="Graduate Assistant"
-              duration="Aug 2024 - Present"
+              initials="TL"
+              company="TheoremLabs.io"
+              position="Programming Analyst · AI Intern"
+              duration="Jan 2026 — Present"
+              summary="Owning HR technology, document intelligence, and AI voice workflows from architecture through production."
+              logo="/tl-logo.webp"
             />
             <ExperienceCard
-              src="/bfl_logo.png?height=250&width=250"
-              companyName="Software Engineer"
-              position="Software Engineer,"
-              duration="Jul 2022 - Jul 2024"
+              initials="DE"
+              company="Discovery Education"
+              position="Software Engineering Intern"
+              duration="May 2025 — Aug 2025"
+              summary="Built full-stack product APIs and serverless AWS workflows, reducing backend infrastructure costs by 25%."
+              logo="/de-logo.png"
             />
             <ExperienceCard
-              src="/tp_logo.png?height=250&width=250"
-              companyName="Tetra Pak"
-              position="Machine Learning Intern"
-              duration="June 2021 - Jul 2022"
+              initials="BF"
+              company="Bajaj Finserv"
+              position="Data Engineer"
+              duration="Jul 2022 — Jul 2024"
+              summary="Engineered reliable data systems across 80M+ customer records and 200+ TB of transactional data."
+              logo="/bfl_logo.png"
             />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Education Section */}
-      <div className="py-12 sm:py-20" id="education">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12">EDUCATION</h2>
-          <div className="flex flex-col sm:flex-row justify-center items-stretch gap-6 sm:gap-1">
-            <EducationCard 
-              src="/uncc_logo.png?height=250&width=250"
-              universityName="University of North Carolina at Charlotte"
-              degree="Master of Science in Computer Science"
-              year="2024 - 2026"
-            />
-            <EducationCard 
-              src="/coep_logo.jpeg?height=250&width=250"
-              universityName="COEP Technological University"
-              degree="Bachelor of Technology in Electrical Engineering"
-              year="2018 - 2022"
-            />
+      <section className="py-14 sm:py-20" id="education">
+        <div className="container mx-auto max-w-6xl px-4">
+          <SectionHeading eyebrow="Academic background" title="EDUCATION" />
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+            {education.map((item) => (
+              <article
+                key={item.school}
+                className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 text-center shadow-md transition-transform duration-300 hover:-translate-y-1"
+              >
+                <div className="mx-auto mb-5 flex h-28 w-28 items-center justify-center">
+                  <Image
+                    src={item.logo}
+                    alt={`${item.school} logo`}
+                    width={112}
+                    height={112}
+                    className="max-h-full w-auto object-contain"
+                  />
+                </div>
+                <h3 className="text-lg font-bold leading-snug text-gray-900">
+                  {item.school}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-gray-600">
+                  {item.degree}
+                </p>
+                {item.detail && (
+                  <p className="text-sm text-gray-500">{item.detail}</p>
+                )}
+                <p className="mt-auto pt-4 text-xs font-bold uppercase tracking-[0.12em] text-green-600">
+                  {item.period}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Contact Section */}
-      <footer className="relative w-full py-16 sm:py-40" id="contact">
-        <div className="w-full h-full bg-black"></div>
-        <div className="absolute inset-0 bg-black bg-opacity-100 flex flex-col items-center justify-center text-white px-4">
-          <a href="mailto:jaltareyr@gmail.com" className="text-xl sm:text-2xl mb-6 hover:text-gray-300 transition-colors">
-            jaltareyr@gmail.com
+      <section className="bg-black py-20 text-white sm:py-28" id="contact">
+        <div className="container mx-auto max-w-4xl px-4 text-center">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-gray-400">
+            Get in touch
+          </p>
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl">
+            Let&apos;s build something useful.
+          </h2>
+          <a
+            href={`mailto:${contact.email}`}
+            className="mt-7 inline-block text-lg font-semibold text-gray-200 transition-colors hover:text-white sm:text-2xl"
+          >
+            {contact.email}
           </a>
-          <div className="flex space-x-4 sm:space-x-6">
-            <Link href="mailto:jaltareyr@gmail.com" aria-label="Email">
-              <Mail className="text-white hover:text-gray-300 w-6 h-6 sm:w-8 sm:h-8" />
-            </Link>
-            <Link href="https://www.linkedin.com/in/yashodhan-jaltare-150a4b192/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin className="w-6 h-6 sm:w-8 sm:h-8 hover:text-gray-300 transition-colors" />
-            </Link>
-            <Link href="https://github.com/jaltareyr" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github className="w-6 h-6 sm:w-8 sm:h-8 hover:text-gray-300 transition-colors" />
-            </Link>
+          <p className="mt-3 flex items-center justify-center gap-2 text-sm text-gray-400">
+            <MapPin size={15} /> Charlotte, North Carolina
+          </p>
+          <div className="mt-8 flex justify-center gap-5">
+            <SocialLink href={`mailto:${contact.email}`} label="Email">
+              <Mail />
+            </SocialLink>
+            <SocialLink href={contact.linkedin} label="LinkedIn">
+              <Linkedin />
+            </SocialLink>
+            <SocialLink href={contact.github} label="GitHub">
+              <Github />
+            </SocialLink>
           </div>
         </div>
-      </footer>
-    </div>
-  )
-}
-
-interface SkillCategoryProps {
-  title: string
-  skills: React.ReactNode[]
-}
-
-function SkillCategory({ title, skills }: SkillCategoryProps) {
-  return (
-    <div>
-      <h3 className="font-bold mb-2 text-gray-800">{title}</h3>
-      <ul className="space-y-1">
-        {skills.map((skill, index) => (
-          <li key={index} className="flex items-start text-sm text-gray-600 font-medium">
-            <Check className="w-4 h-4 mr-2 text-green-500 flex-shrink-0 mt-1" />
-            <span>{skill}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
-function EducationCard({ src, universityName, degree, year }: { src: string, universityName: string, degree: string, year: string }) {
-  return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-300 overflow-hidden w-full max-w-sm mx-4 transition-transform duration-300 ease-in-out hover:scale-105">
-      <div className="p-4 flex flex-col h-full">
-        <div className="mb-4 flex-shrink-0">
-          <Image
-            src={src}
-            alt={`${universityName} logo`}
-            width={200}
-            height={200}
-            className="mx-auto"
-          />
-        </div>
-        <div className="flex-grow flex flex-col justify-between">
-          <h3 className="text-lg font-semibold text-center mb-2">{universityName}</h3>
-          <div>
-            <p className="text-sm text-gray-600 text-center mb-1">{degree}</p>
-            <p className="text-sm text-gray-500 text-center">{year}</p>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }
 
-function ExperienceCard({ src, companyName, position, duration }: { src: string, companyName: string, position: string, duration: string }) {
+function SectionHeading({
+  eyebrow,
+  title,
+}: {
+  eyebrow: string;
+  title: string;
+}) {
   return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-300 overflow-hidden w-full max-w-sm mx-auto transition-transform duration-300 ease-in-out hover:scale-105">
-      <div className="p-4 flex flex-col h-full">
-        <div className="mb-4 flex-shrink-0">
-          <Image
-            src={src}
-            alt={`${companyName} logo`}
-            width={150}
-            height={150}
-            className="mx-auto"
-          />
-        </div>
-        <div className="flex-grow flex flex-col justify-between">
-          <h3 className="text-lg font-semibold text-center mb-2">{companyName}</h3>
-          <p className="text-sm text-gray-700 text-center mb-1">{position}</p>
-          <p className="text-sm text-gray-500 text-center">{duration}</p>
-        </div>
-      </div>
+    <div className="mb-10 text-center">
+      <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-green-600">
+        {eyebrow}
+      </p>
+      <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-gray-900 sm:text-4xl">
+        {title}
+      </h2>
     </div>
+  );
+}
+
+function ExperienceCard({
+  initials,
+  company,
+  position,
+  duration,
+  summary,
+  logo,
+}: {
+  initials: string;
+  company: string;
+  position: string;
+  duration: string;
+  summary: string;
+  logo?: string;
+}) {
+  return (
+    <article className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-md transition-transform duration-300 hover:-translate-y-1">
+      <div className="mb-5 flex h-16 w-16 items-center justify-center overflow-hidden rounded-xl bg-gray-100">
+        {logo ? (
+          <Image
+            src={logo}
+            alt=""
+            width={64}
+            height={64}
+            className="h-full w-full object-contain p-1"
+          />
+        ) : (
+          <span className="text-lg font-extrabold text-gray-700">
+            {initials}
+          </span>
+        )}
+      </div>
+      <h3 className="text-xl font-bold text-gray-900">{company}</h3>
+      <p className="mt-1 text-sm font-semibold text-gray-700">{position}</p>
+      <p className="mt-1 text-xs font-medium text-green-600">{duration}</p>
+      <p className="mt-5 text-sm leading-6 text-gray-600">{summary}</p>
+      <Link
+        href="/resume"
+        className="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-gray-900 hover:text-green-600"
+      >
+        Details <ArrowUpRight size={15} />
+      </Link>
+    </article>
+  );
+}
+
+function SocialLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  const external = href.startsWith("http");
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      aria-label={label}
+      className="rounded-full border border-gray-700 p-3 text-gray-300 transition-colors hover:border-white hover:bg-white hover:text-black"
+    >
+      {children}
+    </a>
   );
 }

@@ -3,51 +3,170 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f7f7f7;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #f1f1f1;
-    --foreground: #000000;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta), Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-  50% {
-    width: 35ch; /* Full text is typed out */
-  }
-  80% {
-    width: 35ch; /* Pause after typing */
-  }
-  100% {
-    width: 0; /* Backspace to empty */
-  }
-}
+::selection { color: #fff; background: #111827; }
+a, button { outline-offset: 3px; }
 
 @keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-.animate-blink {
-  animation: blink 0.7s infinite;
+.animate-blink { animation: blink 0.75s infinite; }
+
+.print-resume { display: none; }
+
+@media print {
+  @page { size: A4 portrait; margin: 0.42in; }
+
+  body {
+    background: #fff;
+    color: #161616;
+    font-size: 8.4pt;
+    line-height: 1.36;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-resume {
+    display: block;
+    width: 100%;
+    font-family: var(--font-jakarta), Arial, sans-serif;
+  }
+
+  .print-resume-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.22in;
+    padding-bottom: 0.14in;
+    border-bottom: 2px solid #111;
+  }
+
+  .print-resume-header h1 {
+    margin: 0;
+    font-size: 25pt;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 1;
+  }
+
+  .print-resume-header p {
+    margin: 0.06in 0 0;
+    color: #16803d;
+    font-size: 9.5pt;
+    font-weight: 700;
+  }
+
+  .print-contact {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.025in 0.14in;
+    text-align: right;
+    font-size: 7.7pt;
+    font-weight: 600;
+  }
+
+  .print-resume-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+    gap: 0.22in;
+    margin-top: 0.17in;
+  }
+
+  .print-sidebar {
+    padding-left: 0.18in;
+    border-left: 1px solid #d4d4d4;
+  }
+
+  .print-section {
+    margin: 0 0 0.17in;
+    break-inside: avoid;
+  }
+
+  .print-section > h2 {
+    margin: 0 0 0.095in;
+    padding-bottom: 0.045in;
+    border-bottom: 1px solid #b7b7b7;
+    color: #16803d;
+    font-size: 7.8pt;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .print-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.08in;
+  }
+
+  .print-row span {
+    flex-shrink: 0;
+    color: #5d5d5d;
+    font-size: 7.2pt;
+    font-weight: 600;
+  }
+
+  .print-job { margin-bottom: 0.13in; }
+  .print-job:last-child { margin-bottom: 0; }
+
+  .print-job h3 {
+    margin: 0;
+    font-size: 9.8pt;
+    font-weight: 800;
+  }
+
+  .print-role { margin-top: 0.065in; }
+
+  .print-role h4,
+  .print-skills h4,
+  .print-projects h4,
+  .print-education h4 {
+    margin: 0;
+    font-size: 8.1pt;
+    font-weight: 800;
+  }
+
+  .print-role ul {
+    margin: 0.045in 0 0;
+    padding-left: 0.15in;
+  }
+
+  .print-role li { margin-bottom: 0.023in; }
+
+  .print-skills,
+  .print-projects,
+  .print-education {
+    display: grid;
+    gap: 0.09in;
+  }
+
+  .print-skills p,
+  .print-projects p,
+  .print-education p {
+    margin: 0.015in 0 0;
+    color: #4c4c4c;
+    font-size: 7.55pt;
+    line-height: 1.4;
+  }
 }

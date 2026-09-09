@@ -12,7 +12,7 @@ interface AnimatedTextProps {
 
 export function AnimatedText({ texts, typingSpeed = 100, deletingSpeed = 50, delayBetweenTexts = 1000, className = '' }: AnimatedTextProps) {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
-  const [currentText, setCurrentText] = useState('')
+  const [currentText, setCurrentText] = useState(texts[0] ?? '')
   const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export function AnimatedText({ texts, typingSpeed = 100, deletingSpeed = 50, del
   }, [currentText, currentTextIndex, isDeleting, texts, typingSpeed, deletingSpeed, delayBetweenTexts])
 
   return (
-    <span className={`inline-block w-full text-left ${className}`}>
+    <span className={`inline-block w-full ${className}`}>
       {currentText}
       <span className="animate-blink">|</span>
     </span>
