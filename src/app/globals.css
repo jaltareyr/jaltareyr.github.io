@@ -31,142 +31,57 @@ a, button { outline-offset: 3px; }
 
 .animate-blink { animation: blink 0.75s infinite; }
 
-.print-resume { display: none; }
-
 @media print {
-  @page { size: A4 portrait; margin: 0.42in; }
+  @page { size: A4 portrait; margin: 0.3in; }
 
   body {
     background: #fff;
     color: #161616;
-    font-size: 8.4pt;
-    line-height: 1.36;
+    font-size: 7.4pt;
+    line-height: 1.28;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
 
-  .print-resume {
-    display: block;
+  .resume-shell {
     width: 100%;
-    font-family: var(--font-jakarta), Arial, sans-serif;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
   }
 
-  .print-resume-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 0.22in;
-    padding-bottom: 0.14in;
-    border-bottom: 2px solid #111;
-  }
+  .resume-shell header { padding-bottom: 0.09in !important; }
+  .resume-shell header h2 { font-size: 21pt !important; line-height: 1 !important; }
+  .resume-shell header > p { margin-top: 0.035in !important; font-size: 9pt !important; line-height: 1.2 !important; }
+  .resume-shell header > div { margin-top: 0.055in !important; gap: 0.04in 0.12in !important; font-size: 7.2pt !important; }
 
-  .print-resume-header h1 {
-    margin: 0;
-    font-size: 25pt;
-    font-weight: 800;
-    letter-spacing: -0.045em;
-    line-height: 1;
-  }
-
-  .print-resume-header p {
-    margin: 0.06in 0 0;
-    color: #16803d;
-    font-size: 9.5pt;
-    font-weight: 700;
-  }
-
-  .print-contact {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 0.025in 0.14in;
-    text-align: right;
-    font-size: 7.7pt;
-    font-weight: 600;
-  }
-
-  .print-resume-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
-    gap: 0.22in;
-    margin-top: 0.17in;
-  }
-
-  .print-sidebar {
-    padding-left: 0.18in;
-    border-left: 1px solid #d4d4d4;
-  }
-
-  .print-section {
-    margin: 0 0 0.17in;
+  .resume-section {
+    padding: 0.085in 0 !important;
     break-inside: avoid;
   }
 
-  .print-section > h2 {
-    margin: 0 0 0.095in;
-    padding-bottom: 0.045in;
-    border-bottom: 1px solid #b7b7b7;
-    color: #16803d;
-    font-size: 7.8pt;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    line-height: 1;
-    text-transform: uppercase;
+  .resume-section > h3 {
+    margin-bottom: 0.055in !important;
+    font-size: 7.2pt !important;
+    line-height: 1 !important;
   }
 
-  .print-row {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.08in;
-  }
+  .resume-shell h4 { font-size: 8.2pt !important; line-height: 1.2 !important; }
+  .resume-shell p { line-height: 1.28 !important; }
+  .resume-shell ul { font-size: 7.25pt !important; line-height: 1.3 !important; }
+  .resume-shell li { line-height: 1.3 !important; }
+  .resume-shell .text-xs { font-size: 6.7pt !important; }
+  .resume-shell .text-sm { font-size: 7.25pt !important; }
+  .resume-shell .leading-6 { line-height: 1.3 !important; }
 
-  .print-row span {
-    flex-shrink: 0;
-    color: #5d5d5d;
-    font-size: 7.2pt;
-    font-weight: 600;
-  }
-
-  .print-job { margin-bottom: 0.13in; }
-  .print-job:last-child { margin-bottom: 0; }
-
-  .print-job h3 {
-    margin: 0;
-    font-size: 9.8pt;
-    font-weight: 800;
-  }
-
-  .print-role { margin-top: 0.065in; }
-
-  .print-role h4,
-  .print-skills h4,
-  .print-projects h4,
-  .print-education h4 {
-    margin: 0;
-    font-size: 8.1pt;
-    font-weight: 800;
-  }
-
-  .print-role ul {
-    margin: 0.045in 0 0;
-    padding-left: 0.15in;
-  }
-
-  .print-role li { margin-bottom: 0.023in; }
-
-  .print-skills,
-  .print-projects,
-  .print-education {
-    display: grid;
-    gap: 0.09in;
-  }
-
-  .print-skills p,
-  .print-projects p,
-  .print-education p {
-    margin: 0.015in 0 0;
-    color: #4c4c4c;
-    font-size: 7.55pt;
-    line-height: 1.4;
-  }
+  .resume-shell .space-y-7 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.075in !important; }
+  .resume-shell .space-y-5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.055in !important; }
+  .resume-shell .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.045in !important; }
+  .resume-shell .space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.018in !important; }
+  .resume-shell .mt-1 { margin-top: 0.018in !important; }
+  .resume-shell .mt-2 { margin-top: 0.035in !important; }
+  .resume-shell .mt-3 { margin-top: 0.05in !important; }
 }

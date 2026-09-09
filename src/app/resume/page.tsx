@@ -13,7 +13,7 @@ export default function ResumePage() {
         <PrintResumeButton />
       </div>
 
-      <article className="resume-shell mx-4 max-w-[920px] rounded-xl border border-gray-200 bg-white px-6 py-8 shadow-lg sm:mx-auto sm:px-12 sm:py-12 print:hidden">
+      <article className="resume-shell mx-4 max-w-[920px] rounded-xl border border-gray-200 bg-white px-6 py-8 shadow-lg sm:mx-auto sm:px-12 sm:py-12">
         <header className="border-b-2 border-black pb-6">
           <h2 className="text-3xl font-extrabold tracking-[-0.04em] text-gray-900 sm:text-5xl">Yashodhan Jaltare</h2>
           <p className="mt-2 text-base font-semibold text-green-600 sm:text-lg">Software, Data &amp; AI Engineer</p>
@@ -85,97 +85,7 @@ export default function ResumePage() {
           </div>
         </ResumeSection>
       </article>
-      <OnePageResume />
     </div>
-  );
-}
-
-function OnePageResume() {
-  return (
-    <article className="print-resume" aria-label="Printable one-page resume">
-      <header className="print-resume-header">
-        <div>
-          <h1>Yashodhan Jaltare</h1>
-          <p>Software, Data &amp; AI Engineer</p>
-        </div>
-        <div className="print-contact">
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>
-          <a href={`tel:${contact.phoneHref}`}>{contact.phone}</a>
-          <a href={contact.linkedin}>LinkedIn</a>
-          <a href={contact.github}>GitHub</a>
-        </div>
-      </header>
-
-      <div className="print-resume-grid">
-        <div>
-          <PrintSection title="Experience">
-            {experience.map((job) => (
-              <div className="print-job" key={job.company}>
-                <div className="print-row">
-                  <h3>{job.company}</h3>
-                  <span>{job.location}</span>
-                </div>
-                {job.roles.map((role) => (
-                  <div className="print-role" key={role.title}>
-                    <div className="print-row">
-                      <h4>{role.title}</h4>
-                      <span>{role.period}</span>
-                    </div>
-                    <ul>
-                      {role.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </PrintSection>
-        </div>
-
-        <aside className="print-sidebar">
-          <PrintSection title="Skills">
-            <div className="print-skills">
-              {skillGroups.map((group) => (
-                <div key={group.title}>
-                  <h4>{group.title}</h4>
-                  <p>{group.items.join(" · ")}</p>
-                </div>
-              ))}
-            </div>
-          </PrintSection>
-
-          <PrintSection title="Projects">
-            <div className="print-projects">
-              {projects.map((project) => (
-                <div key={project.title}>
-                  <div className="print-row"><h4>{project.title}</h4><span>{project.date}</span></div>
-                  <p>{project.description}</p>
-                </div>
-              ))}
-            </div>
-          </PrintSection>
-
-          <PrintSection title="Education">
-            <div className="print-education">
-              {education.map((item) => (
-                <div key={item.school}>
-                  <div className="print-row"><h4>{item.school}</h4><span>{item.period.slice(-4)}</span></div>
-                  <p>{item.degree}{item.detail ? ` — ${item.detail}` : ""}</p>
-                </div>
-              ))}
-            </div>
-          </PrintSection>
-        </aside>
-      </div>
-    </article>
-  );
-}
-
-function PrintSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="print-section">
-      <h2>{title}</h2>
-      {children}
-    </section>
   );
 }
 
